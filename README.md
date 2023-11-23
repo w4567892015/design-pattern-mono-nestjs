@@ -1,7 +1,7 @@
 Design Pattern With Nestjs
 ===
 
-- [ ] Strategy Pattern (策略模式)
+- [x] Strategy Pattern (策略模式)
 - [ ] Composite Pattern (組合模式)
 - [ ] Singleton (單例模式)
 - [ ] Factory Method Pattern (工廠模式)

@@ -1,12 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Body, Controller, Inject, Post } from '@nestjs/common';
 
-@Controller()
+import { PaymentSourceToken } from './payments/payment.constants';
+import { Payment } from './payments/interfaces/payment.interface';
+import { CreatePaymentDto } from './payments/dto/payment.dto';
+
+@Controller('payment')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    @Inject(PaymentSourceToken) private readonly paymentService: Payment
+  ) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post()
+  setPayment(
+    @Body() body: CreatePaymentDto,
+  ): string {
+    return this.paymentService.execute(body.amount);
   }
 }
