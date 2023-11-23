@@ -27,6 +27,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/builder/tsconfig.app.json"
       }
+    },
+    "state": {
+      "type": "application",
+      "root": "apps/state",
+      "entryFile": "main",
+      "sourceRoot": "apps/state/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/state/tsconfig.app.json"
+      }
     }
   }
 }
