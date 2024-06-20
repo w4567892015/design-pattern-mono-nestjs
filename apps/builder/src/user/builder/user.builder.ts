@@ -1,11 +1,10 @@
 import { Injectable } from '@nestjs/common';
 
-import { CreateUserDto } from '../dto/user.dto'
-
+import { User } from '../dto'
 
 @Injectable()
 export class UserBuilder {
-  private user: CreateUserDto;
+  private user: User;
 
   constructor(){
     this.user = {
@@ -14,13 +13,17 @@ export class UserBuilder {
     }
   }
 
-  setName(name: string): UserBuilder {
-    this.user.name = name;
-    return this;
+  getUserInfo(): User {
+    return this.user;
   }
 
   setEmail(email: string): UserBuilder {
     this.user.email = email;
+    return this;
+  }
+
+  setName(name: string): UserBuilder {
+    this.user.name = name;
     return this;
   }
 
@@ -29,8 +32,7 @@ export class UserBuilder {
     return this;
   }
 
-
-  build(): CreateUserDto {
+  async build(): Promise<User> {
     return this.user;
   }
 }

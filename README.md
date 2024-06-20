@@ -14,7 +14,7 @@ Design Pattern With Nestjs
 - [ ] Proxy Pattern (代理模式)
 - [x] Builder Pattern (建築者模式)
 - [ ] Chain of Responsibility Pattern (責任鏈模式)
-- [ ] State Pattern (狀態模式)
+- [x] State Pattern (狀態模式)
 - [ ] Interpreter Pattern (解譯器模式)
 - [ ] Prototype Pattern (雛型工廠)
 - [ ] Visitor Pattern (拜訪者模式)
