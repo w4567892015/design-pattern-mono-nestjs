@@ -9,8 +9,8 @@ export class NoteAggregate extends AggregateRoot {
     super();
   }
 
-  create(id: string, title: string, content: string) {
-    this.apply(new NoteCreatedEvent(id, title, content));
+  create(data: { id: string, title: string, content: string, tag?: string }) {
+    this.apply(new NoteCreatedEvent(data));
   }
 
   activate(id: string) {

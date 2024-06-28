@@ -13,7 +13,7 @@ export class NoteWriteController {
 
   @Post('/note')
   async setNote(): Promise<string> {
-    return this.commandBus.execute(new CreateNoteCommand('test', 'test 123 !!'));
+    return this.commandBus.execute(new CreateNoteCommand('test', 'test 123 !!', 'test'));
   }
 
   @Post('/note/:id')
