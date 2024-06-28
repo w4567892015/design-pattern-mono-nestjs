@@ -15,6 +15,7 @@ export class NoteRepo {
       title,
       content,
       status: 'inactive',
+      tags: [],
     }
     data.push(note);
     return note;
@@ -24,6 +25,13 @@ export class NoteRepo {
     const note = data.find(note => note.id === id);
     if (note) {
       note.status = 'active';
+    }
+  }
+
+  setTag(id: string, tag: string) {
+    const note = data.find(note => note.id === id);
+    if (note) {
+      note.tags.push(tag);
     }
   }
 

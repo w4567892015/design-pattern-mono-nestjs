@@ -10,6 +10,6 @@ export class NoteCreateHandler implements IEventHandler<NoteCreatedEvent> {
     private noteRepository: NoteRepo,
   ) {}
   handle(event: NoteCreatedEvent) {
-    this.noteRepository.create(event.noteId, event.title, event.content);
+    this.noteRepository.create(event.id, event.title, event.content);
   }
 }

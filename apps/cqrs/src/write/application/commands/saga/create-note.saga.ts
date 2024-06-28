@@ -1,19 +1,23 @@
 
 import { Injectable } from '@nestjs/common';
 import { ICommand, ofType, Saga } from '@nestjs/cqrs';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
 import { NoteCreatedEvent } from '../../events/impl/create-note.event';
 import { ActivateNoteCommand } from '../impl/activate-note.command';
+import { CreateNoteTagCommand } from '../impl/create-note-tag.command';
 
 @Injectable()
-export class CreateUserSaga {
+export class CreateNoteSaga {
   @Saga()
-  accountCreated = (events$: Observable<any>): Observable<ICommand> => {
+  noteAutoCreated = (events$: Observable<any>): Observable<ICommand> => {
     return events$.pipe(
       ofType(NoteCreatedEvent),
-      map((event) => new ActivateNoteCommand(event.noteId)),
+      mergeMap((event) => of(
+        new ActivateNoteCommand(event.id),
+        new CreateNoteTagCommand(event.id, 'test')
+      )),
     );
   };
 }
