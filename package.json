@@ -18,8 +18,10 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
   },
   "dependencies": {
+    "@eventstore/db-client": "^6.2.1",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
+    "@nestjs/cqrs": "^10.2.7",
     "@nestjs/platform-fastify": "^10.2.10",
     "fastify": "^4.24.3",
     "reflect-metadata": "^0.1.13",
