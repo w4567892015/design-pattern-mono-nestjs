@@ -25,11 +25,6 @@ Design Pattern With Nestjs
 - [ ] Iterator Pattern (迭代器模式)
 - [ ] Mediator Pattern (仲介者模式)
 
-## Microservice Design Pattern
-
-- [x] Saga 分散式交易模式
-
-
 ## Installation
 
 ```bash

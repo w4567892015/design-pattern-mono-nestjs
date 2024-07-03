@@ -36,15 +36,6 @@
       "compilerOptions": {
         "tsConfigPath": "apps/state/tsconfig.app.json"
       }
-    },
-    "cqrs": {
-      "type": "application",
-      "root": "apps/cqrs",
-      "entryFile": "main",
-      "sourceRoot": "apps/cqrs/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/cqrs/tsconfig.app.json"
-      }
     }
   }
 }
